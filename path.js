@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { read } = require('fs/promises');
+const read = require('fs/promises');
 const path = require('path');
 
 const base = './folder';
@@ -21,24 +21,18 @@ const readDir = (base, level) => {
         }
     });
 
-    /*for(let i=0; i < arr_files.length; i++) {
-        console.log(arr_files[i]);
-    }*/
-    //console.log(arr_files.length);
-    //console.log(arr_files[0]);
-   //console.log(arr_files[0]);
-   //console.log(arr_files);
    arr_files.forEach(item => {
       const p = item[0] + '/' + item;
-      return p;
+      console.log(p);
    })
-    
+
 }
 
-//readDir(base,0);
-fs.mkdir(base+'/b', err => {
+
+readDir(base,0);
+/*fs.mkdirSync(base+'/a', err => {
     if (err) throw err;
 })
-fs.rename('folder/new/next_folder/b.txt','b/b.txt', err => {
+fs.renameSync(base+'/new/a.txt',base+'/a/a.txt', err => {
     if (err) throw err;
-});
+});*/
